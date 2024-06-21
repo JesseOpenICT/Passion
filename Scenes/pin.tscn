@@ -1,0 +1,40 @@
+[gd_scene load_steps=6 format=3 uid="uid://c1nmw4oop3lr6"]
+
+[ext_resource type="Texture2D" uid="uid://dtibo4cxu6auj" path="res://Sprites/Pin/checked.png" id="1_0ia6t"]
+[ext_resource type="Script" path="res://Scripts/pin.gd" id="1_8n8rt"]
+[ext_resource type="Texture2D" uid="uid://cihgqea314sya" path="res://Sprites/Pin/unchecked.png" id="2_ovrds"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dqrr2"]
+size = Vector2(91, 180)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fi7hc"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_0ia6t")
+}],
+"loop": true,
+"name": &"checked",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ovrds")
+}],
+"loop": true,
+"name": &"unchecked",
+"speed": 5.0
+}]
+
+[node name="Pin" type="StaticBody2D" groups=["pin"]]
+script = ExtResource("1_8n8rt")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-2.5, 10)
+shape = SubResource("RectangleShape2D_dqrr2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+z_index = 1
+scale = Vector2(0.2, 0.2)
+sprite_frames = SubResource("SpriteFrames_fi7hc")
+animation = &"unchecked"

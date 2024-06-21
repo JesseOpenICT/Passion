@@ -1,0 +1,290 @@
+[gd_scene load_steps=18 format=3 uid="uid://budssqkx4xcxc"]
+
+[ext_resource type="PackedScene" uid="uid://c1nmw4oop3lr6" path="res://Scenes/pin.tscn" id="1_77ytj"]
+[ext_resource type="Script" path="res://Scripts/testworld.gd" id="1_hi42q"]
+[ext_resource type="PackedScene" uid="uid://b8lvea751sa4p" path="res://Scenes/terrain/dullterrain.tscn" id="1_ta1xe"]
+[ext_resource type="PackedScene" uid="uid://cypu0fabw3qpf" path="res://Scenes/guy.tscn" id="2_gxkth"]
+[ext_resource type="PackedScene" uid="uid://bwkrgr4tvvvpq" path="res://Scenes/darkness.tscn" id="3_bet71"]
+[ext_resource type="Texture2D" uid="uid://dbgsfsbjalfw3" path="res://Sprites/Watermark.png" id="3_nhwrr"]
+[ext_resource type="Texture2D" uid="uid://b8rtpn1ppbm8j" path="res://Sprites/PASSION.png" id="3_wtvxc"]
+[ext_resource type="Texture2D" uid="uid://dwa8d3auu3ou2" path="res://Sprites/Glow.png" id="4_yleib"]
+[ext_resource type="PackedScene" uid="uid://cx0ijkoabepw0" path="res://Scenes/textbulb.tscn" id="6_3wbs6"]
+[ext_resource type="PackedScene" uid="uid://h8ittaprtu7e" path="res://Scenes/terrain/higherterrain.tscn" id="8_8a6t2"]
+[ext_resource type="PackedScene" uid="uid://lercx61at4lr" path="res://Scenes/terrain/stairterrain.tscn" id="10_5yiqr"]
+[ext_resource type="PackedScene" uid="uid://m0nyi82prwtu" path="res://Scenes/terrain/chuteterrain.tscn" id="10_n7y5f"]
+[ext_resource type="PackedScene" uid="uid://uybnnvtmndfh" path="res://Scenes/terrain/third time ups.tscn" id="12_c2h2p"]
+[ext_resource type="PackedScene" uid="uid://bhoshg44fbd2t" path="res://Scenes/flag.tscn" id="13_jm2yl"]
+[ext_resource type="PackedScene" uid="uid://dtn04o1h763c2" path="res://Scenes/terrain/nextterrain.tscn" id="15_b8cs8"]
+[ext_resource type="PackedScene" uid="uid://ceovtu1kfoxlm" path="res://Scenes/hexagon.tscn" id="16_428xw"]
+[ext_resource type="Texture2D" uid="uid://dpy8un641j2ub" path="res://Sprites/arrow.png" id="17_muejc"]
+
+[node name="Testworld" type="Node"]
+script = ExtResource("1_hi42q")
+txtscene = ExtResource("6_3wbs6")
+
+[node name="BG" type="ParallaxBackground" parent="."]
+scale = Vector2(1.05, 1.05)
+transform = Transform2D(1.05, 0, 0, 1.05, 0, 0)
+
+[node name="WinBG" type="TextureRect" parent="BG"]
+offset_left = -60.9524
+offset_top = -3.80952
+offset_right = 1859.05
+offset_bottom = 1076.19
+texture = ExtResource("3_nhwrr")
+metadata/_edit_use_anchors_ = true
+
+[node name="MainBG" type="TextureRect" parent="BG" groups=["BG"]]
+offset_left = -60.9523
+offset_top = -3.80952
+offset_right = 1859.05
+offset_bottom = 1076.19
+texture = ExtResource("3_wtvxc")
+metadata/_edit_use_anchors_ = true
+
+[node name="LIGHT" type="PointLight2D" parent="BG"]
+position = Vector2(1859.05, 1068.19)
+color = Color(1, 0.243137, 1, 1)
+range_z_min = 1
+range_z_max = 1
+texture = ExtResource("4_yleib")
+offset = Vector2(-960, -528)
+
+[node name="BLACKLIGHT" type="PointLight2D" parent="BG"]
+position = Vector2(1859.05, 1068.19)
+color = Color(0, 0.447059, 0.721569, 1)
+energy = 1.91
+blend_mode = 1
+range_z_min = 3
+range_z_max = 3
+texture = ExtResource("4_yleib")
+offset = Vector2(-960, -528)
+
+[node name="wintext" type="RichTextLabel" parent="BG" groups=["Wintext"]]
+visible = false
+offset_left = 32.0
+offset_top = 24.0
+offset_right = 1707.0
+offset_bottom = 1056.0
+theme_override_colors/default_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 5
+theme_override_font_sizes/normal_font_size = 40
+text = "Victory text (hidden)"
+
+[node name="---PINS---" type="Node" parent="."]
+
+[node name="Pin2" parent="---PINS---" instance=ExtResource("1_77ytj")]
+position = Vector2(6128, 2904)
+
+[node name="Pin3" parent="---PINS---" instance=ExtResource("1_77ytj")]
+position = Vector2(11208, 408)
+
+[node name="Pin5" parent="---PINS---" instance=ExtResource("1_77ytj")]
+position = Vector2(7256, -1520)
+
+[node name="Pin4" parent="---PINS---" instance=ExtResource("1_77ytj")]
+position = Vector2(11160, -1696)
+
+[node name="Pin6" parent="---PINS---" instance=ExtResource("1_77ytj")]
+position = Vector2(12456, -3016)
+
+[node name="Pin" parent="---PINS---" instance=ExtResource("1_77ytj")]
+position = Vector2(9104, 3072)
+
+[node name="Pin7" parent="---PINS---" instance=ExtResource("1_77ytj")]
+position = Vector2(5560, -3232)
+
+[node name="Pin8" parent="---PINS---" instance=ExtResource("1_77ytj")]
+position = Vector2(1464, -4448)
+
+[node name="Pin9" parent="---PINS---" instance=ExtResource("1_77ytj")]
+position = Vector2(-276, -7112)
+
+[node name="Pin10" parent="---PINS---" instance=ExtResource("1_77ytj")]
+position = Vector2(8232, -8232)
+
+[node name="Pin11" parent="---PINS---" instance=ExtResource("1_77ytj")]
+position = Vector2(5224, -11632)
+
+[node name="Guy" parent="." instance=ExtResource("2_gxkth")]
+gravity_scale = 1.0
+continuous_cd = 0
+
+[node name="---TERRAIN---" type="Node" parent="."]
+
+[node name="Third time ups" parent="---TERRAIN---" instance=ExtResource("12_c2h2p")]
+position = Vector2(9928, -1712)
+scale = Vector2(1, 1)
+
+[node name="Dullterrain" parent="---TERRAIN---" instance=ExtResource("1_ta1xe")]
+position = Vector2(-96, -80)
+scale = Vector2(2, 2)
+
+[node name="Higherterrain" parent="---TERRAIN---" instance=ExtResource("8_8a6t2")]
+position = Vector2(12744, 840)
+scale = Vector2(2, 2)
+
+[node name="Chuteterrain" parent="---TERRAIN---" instance=ExtResource("10_n7y5f")]
+position = Vector2(9984, 856)
+
+[node name="Stairterrain" parent="---TERRAIN---" instance=ExtResource("10_5yiqr")]
+position = Vector2(2560, -1432)
+
+[node name="Nextterrain" parent="---TERRAIN---" instance=ExtResource("15_b8cs8")]
+position = Vector2(-1536, -6312)
+scale = Vector2(5, 5)
+
+[node name="---DARKNESS--" type="Node" parent="."]
+
+[node name="Darkness3" parent="---DARKNESS--" instance=ExtResource("3_bet71")]
+position = Vector2(9976, 3560)
+scale = Vector2(0.8, 0.8)
+
+[node name="Darkness2" parent="---DARKNESS--" instance=ExtResource("3_bet71")]
+position = Vector2(9568, 3672)
+
+[node name="Darkness4" parent="---DARKNESS--" instance=ExtResource("3_bet71")]
+position = Vector2(10040, 432)
+scale = Vector2(1.5, 1.5)
+
+[node name="Darkness5" parent="---DARKNESS--" instance=ExtResource("3_bet71")]
+position = Vector2(6368, -992)
+scale = Vector2(0.2, 0.2)
+
+[node name="Darkness" parent="---DARKNESS--" instance=ExtResource("3_bet71")]
+position = Vector2(7992, 2720)
+
+[node name="Darkness6" parent="---DARKNESS--" instance=ExtResource("3_bet71")]
+position = Vector2(8256, -1632)
+
+[node name="Darkness7" parent="---DARKNESS--" instance=ExtResource("3_bet71")]
+position = Vector2(8256, -2176)
+
+[node name="Darkness8" parent="---DARKNESS--" instance=ExtResource("3_bet71")]
+position = Vector2(10512, -1984)
+
+[node name="Darkness9" parent="---DARKNESS--" instance=ExtResource("3_bet71")]
+position = Vector2(13280, -1368)
+scale = Vector2(5, 5)
+
+[node name="Darkness10" parent="---DARKNESS--" instance=ExtResource("3_bet71")]
+position = Vector2(12144, -1584)
+scale = Vector2(2, 2)
+
+[node name="Darkness11" parent="---DARKNESS--" instance=ExtResource("3_bet71")]
+position = Vector2(6368, -2440)
+
+[node name="Darkness12" parent="---DARKNESS--" instance=ExtResource("3_bet71")]
+position = Vector2(3544, -3848)
+scale = Vector2(0.2, 0.2)
+
+[node name="Darkness13" parent="---DARKNESS--" instance=ExtResource("3_bet71")]
+position = Vector2(3112, -4040)
+scale = Vector2(0.5, 0.5)
+
+[node name="Darkness14" parent="---DARKNESS--" instance=ExtResource("3_bet71")]
+position = Vector2(2424, -4032)
+scale = Vector2(1.5, 1.5)
+
+[node name="Darkness15" parent="---DARKNESS--" instance=ExtResource("3_bet71")]
+position = Vector2(-952, -4640)
+scale = Vector2(0.2, 0.2)
+
+[node name="Darkness16" parent="---DARKNESS--" instance=ExtResource("3_bet71")]
+position = Vector2(-952, -5008)
+
+[node name="Darkness17" parent="---DARKNESS--" instance=ExtResource("3_bet71")]
+position = Vector2(608, -7336)
+scale = Vector2(0.7, 0.7)
+
+[node name="Darkness18" parent="---DARKNESS--" instance=ExtResource("3_bet71")]
+position = Vector2(2312, -8592)
+
+[node name="Darkness19" parent="---DARKNESS--" instance=ExtResource("16_428xw")]
+position = Vector2(9224, -8496)
+scale = Vector2(0.6, 0.6)
+
+[node name="Darkness20" parent="---DARKNESS--" instance=ExtResource("3_bet71")]
+position = Vector2(3752, -12096)
+scale = Vector2(0.4, 0.4)
+
+[node name="Darkness21" parent="---DARKNESS--" instance=ExtResource("3_bet71")]
+position = Vector2(2920, -12352)
+
+[node name="Darkness22" parent="---DARKNESS--" instance=ExtResource("3_bet71")]
+position = Vector2(1576, -12872)
+
+[node name="Darkness23" parent="---DARKNESS--" instance=ExtResource("3_bet71")]
+position = Vector2(1712, -13336)
+
+[node name="Flag" parent="." instance=ExtResource("13_jm2yl")]
+position = Vector2(-216, -13984)
+scale = Vector2(0.2, 0.2)
+
+[node name="Arrow" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(11216, 632)
+rotation = 6.26511
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_muejc")
+
+[node name="Arrow2" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(7696, -1520)
+rotation = 9.23467
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_muejc")
+
+[node name="Arrow3" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(11672, -1584)
+rotation = 9.23467
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_muejc")
+
+[node name="Arrow4" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(13096, -2800)
+rotation = 12.9961
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_muejc")
+
+[node name="Arrow5" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(5558, -3016)
+rotation = 12.675
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_muejc")
+
+[node name="Arrow6" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(1792, -4256)
+rotation = 12.675
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_muejc")
+
+[node name="Arrow7" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(-416, -6864)
+rotation = 15.2018
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_muejc")
+
+[node name="Arrow8" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(8128, -7928)
+rotation = 15.2018
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_muejc")
+
+[node name="Arrow9" type="Sprite2D" parent="."]
+z_index = 2
+position = Vector2(4816, -11504)
+rotation = 13.0634
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("17_muejc")
+
+[connection signal="checkpoint" from="Guy" to="." method="_on_guy_checkpoint"]
+[connection signal="echo" from="Guy" to="." method="_emote"]
+[connection signal="win" from="Guy" to="." method="_on_guy_win"]

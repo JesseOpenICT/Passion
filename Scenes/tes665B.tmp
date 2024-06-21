@@ -1,0 +1,40 @@
+[gd_scene load_steps=3 format=3 uid="uid://budssqkx4xcxc"]
+
+[ext_resource type="PackedScene" uid="uid://b8lvea751sa4p" path="res://Scenes/dullterrain.tscn" id="1_ta1xe"]
+[ext_resource type="PackedScene" uid="uid://cypu0fabw3qpf" path="res://Scenes/guy.tscn" id="2_gxkth"]
+
+[node name="Testworld" type="Node"]
+
+[node name="Guy" parent="." instance=ExtResource("2_gxkth")]
+position = Vector2(-445, -237)
+
+[node name="Dullterrain4" parent="." instance=ExtResource("1_ta1xe")]
+position = Vector2(-448, 224)
+
+[node name="Dullterrain" parent="." instance=ExtResource("1_ta1xe")]
+position = Vector2(0, 224)
+
+[node name="Dullterrain2" parent="." instance=ExtResource("1_ta1xe")]
+position = Vector2(448, 216)
+
+[node name="Dullterrain3" parent="." instance=ExtResource("1_ta1xe")]
+position = Vector2(480, 192)
+
+[node name="Dullterrain5" parent="." instance=ExtResource("1_ta1xe")]
+position = Vector2(544, 152)
+
+[node name="Dullterrain6" parent="." instance=ExtResource("1_ta1xe")]
+position = Vector2(-848, 264)
+rotation = -0.200713
+
+[node name="Dullterrain7" parent="." instance=ExtResource("1_ta1xe")]
+position = Vector2(-1208, 352)
+rotation = -0.401426
+scale = Vector2(1, 1)
+
+[node name="Dullterrain8" parent="." instance=ExtResource("1_ta1xe")]
+position = Vector2(-1368, 520)
+rotation = 1.91463
+
+[node name="Dullterrain9" parent="." instance=ExtResource("1_ta1xe")]
+position = Vector2(-1872, 872)

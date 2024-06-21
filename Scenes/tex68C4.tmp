@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://cx0ijkoabepw0"]
+
+[ext_resource type="Script" path="res://Scripts/Textbulb.gd" id="1_hf4d7"]
+[ext_resource type="Texture2D" uid="uid://bj8utlj4i512w" path="res://Sprites/TXT.png" id="2_pe7r7"]
+
+[node name="Textbulb" type="Node2D"]
+position = Vector2(0, -200)
+script = ExtResource("1_hf4d7")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 8)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_pe7r7")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+offset_left = -88.0
+offset_top = -72.0
+offset_right = 88.0
+offset_bottom = 56.0
+text = "Let's Go!"
+
+[node name="notifier" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="notifier" to="." method="_on_notifier_screen_exited"]

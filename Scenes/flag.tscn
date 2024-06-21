@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://bhoshg44fbd2t"]
+
+[ext_resource type="Texture2D" uid="uid://ifrdxxvu6wce" path="res://Sprites/Flag/1.png" id="1_37gqh"]
+[ext_resource type="Texture2D" uid="uid://c83wtn6ex4s7y" path="res://Sprites/Flag/2.png" id="2_piktd"]
+[ext_resource type="Texture2D" uid="uid://dr3nrl5d6uljn" path="res://Sprites/Flag/3.png" id="3_lx6r4"]
+[ext_resource type="Texture2D" uid="uid://dln0755xe022q" path="res://Sprites/Flag/4.png" id="4_gmkb1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_bu7fn"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_37gqh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_piktd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_lx6r4")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_gmkb1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fvhjn"]
+size = Vector2(90, 976)
+
+[node name="Flag" type="StaticBody2D" groups=["Flag"]]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_bu7fn")
+frame_progress = 0.308607
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(35, 8)
+shape = SubResource("RectangleShape2D_fvhjn")

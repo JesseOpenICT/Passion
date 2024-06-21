@@ -1,0 +1,37 @@
+[gd_scene load_steps=4 format=3 uid="uid://cx0ijkoabepw0"]
+
+[ext_resource type="Script" path="res://Scripts/Textbulb.gd" id="1_hf4d7"]
+[ext_resource type="Texture2D" uid="uid://bj8utlj4i512w" path="res://Sprites/TXT.png" id="2_pe7r7"]
+[ext_resource type="FontFile" uid="uid://n0in55cfo6qh" path="res://Font/Ubuntu-Title.ttf" id="3_fvnk0"]
+
+[node name="Textbulb" type="Node2D"]
+z_index = 5
+position = Vector2(0, -200)
+script = ExtResource("1_hf4d7")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, 8)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("2_pe7r7")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = -88.0
+offset_top = -72.0
+offset_right = 88.0
+offset_bottom = 56.0
+alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/default_color = Color(0, 0, 0, 1)
+theme_override_fonts/normal_font = ExtResource("3_fvnk0")
+theme_override_font_sizes/normal_font_size = 40
+bbcode_enabled = true
+text = "[center]Let's go![/center]"
+fit_content = true
+scroll_active = false
+
+[node name="notifier" type="VisibleOnScreenNotifier2D" parent="."]
+
+[connection signal="screen_exited" from="notifier" to="." method="_on_notifier_screen_exited"]

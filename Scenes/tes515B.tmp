@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://budssqkx4xcxc"]
+
+[ext_resource type="PackedScene" uid="uid://c1nmw4oop3lr6" path="res://Scenes/pin.tscn" id="1_77ytj"]
+[ext_resource type="Script" path="res://Scripts/testworld.gd" id="1_hi42q"]
+[ext_resource type="PackedScene" uid="uid://b8lvea751sa4p" path="res://Scenes/dullterrain.tscn" id="1_ta1xe"]
+[ext_resource type="PackedScene" uid="uid://cypu0fabw3qpf" path="res://Scenes/guy.tscn" id="2_gxkth"]
+[ext_resource type="PackedScene" uid="uid://bwkrgr4tvvvpq" path="res://Scenes/darkness.tscn" id="3_bet71"]
+
+[node name="Testworld" type="Node"]
+script = ExtResource("1_hi42q")
+
+[node name="Pin2" parent="." instance=ExtResource("1_77ytj")]
+position = Vector2(5512, 2912)
+
+[node name="Pin" parent="." instance=ExtResource("1_77ytj")]
+position = Vector2(7656, 2624)
+
+[node name="Pin3" parent="." instance=ExtResource("1_77ytj")]
+position = Vector2(752, 88)
+
+[node name="Guy" parent="." instance=ExtResource("2_gxkth")]
+gravity_scale = 1.0
+continuous_cd = 0
+
+[node name="Dullterrain" parent="." instance=ExtResource("1_ta1xe")]
+position = Vector2(-96, -80)
+scale = Vector2(2, 2)
+
+[node name="Darkness" parent="." instance=ExtResource("3_bet71")]
+position = Vector2(6456, 2976)
+
+[connection signal="checkpoint" from="Guy" to="." method="_on_guy_checkpoint"]
